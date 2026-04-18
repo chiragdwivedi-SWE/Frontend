@@ -5,9 +5,11 @@ const PrivacyData = () => {
 
   return (
     <div className="max-w-5xl">
+
       <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
-        {t("privacyData")}
+        {t("Privacy & Data")}
       </h2>
+
     </div>
   );
 };

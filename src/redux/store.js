@@ -19,5 +19,6 @@ export const store = configureStore({
     ui: uiReducer,
     language: languageReducer,
     reports: reportReducer,
+    auth: authReducer,
   },
 });

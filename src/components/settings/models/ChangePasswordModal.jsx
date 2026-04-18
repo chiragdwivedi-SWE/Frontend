@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const ChangePasswordModal = ({ onClose }) => {
   const { t } = useTranslation();
+
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -62,7 +63,7 @@ const ChangePasswordModal = ({ onClose }) => {
           animate={{ scale: 1, y: 0, opacity: 1 }}
           exit={{ scale: 0.9, y: 30, opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="relative w-full max-w-xl rounded-[26px] bg-white dark:bg-[#181919] px-10 py-9 shadow-2xl dark:border-white"
+          className="relative w-full max-w-xl rounded-[26px] bg-white dark:bg-[#181919] px-10 py-9 shadow-2xl"
         >
           <h2 className="text-2xl font-bold mb-2 text-black dark:text-white">
             {t("changePassword")}
@@ -81,6 +82,7 @@ const ChangePasswordModal = ({ onClose }) => {
                 show={showCurrent}
                 toggle={() => setShowCurrent(!showCurrent)}
               />
+
               <PasswordField
                 label={t("newPassword")}
                 value={newPassword}
@@ -88,6 +90,7 @@ const ChangePasswordModal = ({ onClose }) => {
                 show={showNew}
                 toggle={() => setShowNew(!showNew)}
               />
+
               <PasswordField
                 label={t("confirmPassword")}
                 value={confirmPassword}
@@ -107,14 +110,14 @@ const ChangePasswordModal = ({ onClose }) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 py-2.5 rounded-2xl border border-gray-700 text-lg text-gray-700 hover:bg-gray-100 dark:bg-black dark:text-[#73FBFD] dark:border-[#73FBFD] dark:hover:bg-gray-800 dark:hover:text-[#73FBFD] transition"
+                className="flex-1 py-2.5 rounded-2xl border border-gray-700 text-lg text-gray-700 hover:bg-gray-100 dark:bg-black dark:text-[#73FBFD] dark:border-[#73FBFD] dark:hover:bg-gray-800 transition"
               >
                 {t("discard")}
               </button>
 
               <button
                 type="submit"
-                className="flex-1 py-2.5 rounded-2xl bg-[#2461E6] text-lg text-white font-medium border border-[#2461E6] hover:bg-blue-100 hover:text-[#2461E6] dark:bg-[#73FBFD] dark:text-black dark:border-[#73FBFD] dark:hover:bg-gray-800 dark:hover:text-[#73FBFD] transition shadow-sm"
+                className="flex-1 py-2.5 rounded-2xl bg-[#2461E6] text-lg text-white font-medium border border-[#2461E6] hover:bg-blue-100 hover:text-[#2461E6] dark:bg-[#73FBFD] dark:text-black dark:border-[#73FBFD] dark:hover:bg-gray-800 transition shadow-sm"
               >
                 {t("saveChanges")}
               </button>
@@ -131,17 +134,19 @@ const PasswordField = ({ label, value, setValue, show, toggle }) => (
     <label className="w-[210px] text-lg font-semibold text-black dark:text-white">
       {label}
     </label>
+
     <div className="relative flex-1">
       <input
         type={show ? "text" : "password"}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full h-[45px] px-6 rounded-lg border border-gray-400 bg-white text-black text-base focus:outline-none focus:border-black dark:bg-[#0B0B0B] dark:text-white dark:border-gray-600 dark:focus:border-white transition-colors duration-200"
+        className="w-full h-[45px] px-6 rounded-lg border border-gray-400 bg-white text-black text-base focus:outline-none focus:border-black dark:bg-[#0B0B0B] dark:text-white dark:border-gray-600 dark:focus:border-white transition"
       />
+
       <button
         type="button"
         onClick={toggle}
-        className="absolute right-5 top-1/2 -translate-y-1/2 text-2xl text-black dark:text-white"
+        className="absolute right-5 top-1/2 -translate-y-1/2 text-black dark:text-white"
       >
         {show ? <Eye size={22} /> : <EyeOff size={22} />}
       </button>

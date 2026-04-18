@@ -5,9 +5,11 @@ const Notifications = () => {
 
   return (
     <div className="max-w-5xl">
+
       <h2 className="text-xl font-semibold text-black dark:text-white mb-6">
         {t("notificationsTab")}
       </h2>
+
     </div>
   );
 };
